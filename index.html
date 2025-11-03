@@ -1,186 +1,527 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>9 Wickets Official Agent list. | Home</title>
-
-    <meta name="title" content="VELKI AGENT LIST | VELKI LIVE | Betting Bangladesh" />
-    <meta name="description" content="Velki Login. Velki live bet. Velki Casino. Betting site in Bangladesh. Cricket betting sites in Bangladesh. ভেলকি এজেন্ট লিস্ট, ভেলকি লাইভ একাউন্ট খুলুন" />
-
-    <link rel="icon" href="https://www.velki9wicktsagentlist.com/admin-assets/img/products/favicon474669024.jpg" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.velki9wicktsagentlist.com/frontend-assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .input-group {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            outline: none;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            background: #ff0000;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .video-info {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            transition: all 0.5s ease;
+        }
+        
+        .video-preview {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .thumbnail {
+            width: 200px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-details {
+            flex: 1;
+        }
+        
+        .video-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .video-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .download-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .download-btn {
+            background: #4CAF50;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .download-btn:hover {
+            background: #3d8b40;
+            transform: translateY(-3px);
+        }
+        
+        .quality {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success {
+            background: rgba(0, 255, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #fff;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .instructions {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            input {
+                border-radius: 50px;
+                margin-bottom: 10px;
+            }
+            
+            button {
+                border-radius: 50px;
+                width: 100%;
+            }
+            
+            .download-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-preview {
+                flex-direction: column;
+            }
+            
+            .thumbnail {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
 </head>
-
-<body style="background-color: #ffb813;">
-
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-4 col-md-2 col-lg-2">
-                    <a class="navbar-brand" href="https://www.velki9wicktsagentlist.com">
-                        <img src="https://www.velki9wicktsagentlist.com/admin-assets/img/products/logo409305090.jpg" alt="Velki" style="max-width:100%">
-                    </a>
-                </div>
-                <div class="col-md-7 col-lg-8 d-none d-md-block d-lg-block">
-                    <div class="d-none d-md-block d-lg-block" id="navbarNav">
-                        <ul class="navbar-nav ms-auto justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.velki9wicktsagentlist.com">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/customer">SERVICE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/admin">ADMIN</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/super">SUPER</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/master">MASTER</a>
-                            </li>
-                        </ul>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        <p class="subtitle">Download your favorite YouTube videos quickly and easily</p>
+        
+        <div class="input-group">
+            <input type="text" id="videoUrl" placeholder="Paste YouTube video URL here...">
+            <button id="fetchBtn">Fetch Video</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Fetching video information...</p>
+        </div>
+        
+        <div class="error" id="errorMsg">
+            Please enter a valid YouTube URL
+        </div>
+        
+        <div class="success" id="successMsg">
+            Download started successfully!
+        </div>
+        
+        <div class="video-info" id="videoInfo">
+            <div class="video-preview">
+                <img src="" alt="Video Thumbnail" class="thumbnail" id="thumbnail">
+                <div class="video-details">
+                    <h2 class="video-title" id="videoTitle">Video Title</h2>
+                    <div class="video-meta">
+                        <span id="videoDuration">Duration: 10:30</span>
+                        <span id="videoChannel">Channel: Example Channel</span>
+                        <span id="videoViews">Views: 1.5M</span>
                     </div>
-                </div>
-                <div class="col-8 col-md-3 col-lg-2 mt-lg-0 mt-md-0">
-                    <input class="form-control" id="searchInput" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <p id="videoDescription">Video description will appear here...</p>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div class="d-sm-block d-md-none d-lg-none mobile_menu container">
-        <div class="d-flex item-algin-center justify-content-between">
-            <span class="nav-item">
-                <a class="nav-link" href="https://www.velki9wicktsagentlist.com">HOME</a>
-            </span>
-            <span class="nav-item">
-                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/customer">SERVICE</a>
-            </span>
-            <span class="nav-item">
-                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/admin">ADMIN</a>
-            </span>
-            <span class="nav-item">
-                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/super">SUPER</a>
-            </span>
-            <span class="nav-item">
-                <a class="nav-link" href="https://www.velki9wicktsagentlist.com/master">MASTER</a>
-            </span>
+            
+            <div class="download-options" id="downloadOptions">
+                <!-- Download options will be dynamically generated here -->
+            </div>
         </div>
     </div>
-
-    <div class="container">
-        <table class="data table table-striped" style="width: 100%;" id="dataTable">
-            <thead>
-                <tr>
-                    <th class="header" colspan="6">9 Wickets Official Agent list. AGENT LIST</th>
-                </tr>
-                <tr>
-                    <th class="sub_header" colspan="6">হোয়াটসাপ ব্যাতিত অন্য কোন এপ এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহনযোগ্য হবে না</th>
-                </tr>
-                <tr>
-                    <th scope="col" align="center">TYPE</th>
-                    <th scope="col" align="center">NAME</th>
-                    <th scope="col" align="center">ID NO</th>
-                    <th scope="col" align="center">PHONE APP LINK</th>
-                    <th scope="col" align="center">PHONE NUMBER</th>
-                    <th scope="col" align="center">ADMIN</th>
-                </tr>
-                <tr>
-                    <th class="sub_header" colspan="6">
-                        UNDER HOME = 112 ;
-                        UNDER SERVICE = 1 ;
-                        UNDER ADMIN = 2 ;
-                        UNDER SUPER = 10 ;
-                        UNDER MASTER = 110 ;
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Agent rows would go here - I've kept the first few as examples -->
-                <tr class="odd" align="center">
-                    <td><b>HOME</b></td>
-                    <td><b>[Admin] Alex Adil  ⭐⭐⭐</b></td>
-                    <td><b>6 </b></td>
-                    <td> <a href="https://wa.me/+8801812242859" target="_blank"><img decoding="async" src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/ws.png" width="25" alt="WhatsApp"></a></td>
-                    <td> <a href="https://wa.me/+8801812242859" target="_blank">+8801812242859 </a></td>
-                    <td><a href="https://wa.me/+8801812242859" target="_blank">COMPLAIN</a></td>
-                </tr>
-                <tr class="odd" align="center">
-                    <td><b>HOME</b></td>
-                    <td><b>[Admin] Salman Malik ⭐⭐⭐</b></td>
-                    <td><b>4 </b></td>
-                    <td> <a href="https://wa.me/+8801812242859" target="_blank"><img decoding="async" src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/ws.png" width="25" alt="WhatsApp"></a></td>
-                    <td> <a href="https://wa.me/+8801812242859" target="_blank">+8801812242859 </a></td>
-                    <td><a href="https://wa.me/+8801812242859" target="_blank">COMPLAIN</a></td>
-                </tr>
-                <!-- Additional agent rows would continue here -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th class="header" colspan="6">
-                        &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
+    
+    <div class="container instructions">
+        <h3>How to Use This Downloader</h3>
+        <ol>
+            <li>Copy the URL of the YouTube video you want to download</li>
+            <li>Paste the URL in the input field above</li>
+            <li>Click the "Fetch Video" button</li>
+            <li>Select your preferred download quality/format</li>
+            <li>Your download will begin automatically</li>
+        </ol>
     </div>
-
-    <footer class="container">
-        <div class="d-flex copy_right">
-            <p>Copyright © <a href="https://www.velki9wicktsagentlist.com">9 Wickets Official Agent list.</a> | Powered by <a href="https://wa.me/+8801812242859">9 wickets velki agent list</a></p>
-        </div>
-
-        <div class="col-md-12">
-            <center>
-                <ul style="list-style: none; padding: 0;" class="footer_ul">
-                    <li style="display: inline-block; margin-right: 10px;">
-                        <a href="https://facebook.com" target="_blank">
-                            <img src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/facebook.png" alt="Facebook">
-                        </a>
-                    </li>
-                    <li style="display: inline-block; margin-right: 10px;">
-                        <a href="https://wa.me/+8801812242859" target="_blank">
-                            <img src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/ws.png" width="25px" alt="WhatsApp">
-                        </a>
-                    </li>
-                    <li style="display: inline-block; margin-right: 10px;">
-                        <a href="https://youtube.com" target="_blank">
-                            <img src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/youtube.png" alt="YouTube">
-                        </a>
-                    </li>
-                    <li style="display: inline-block; margin-right: 10px;">
-                        <a href="https://twitter.com" target="_blank">
-                            <img src="https://www.velki9wicktsagentlist.com/frontend-assets/img/frontend/twitter.png" alt="Twitter">
-                        </a>
-                    </li>
-                </ul>
-            </center>
-        </div>
+    
+    <footer>
+        <p>Note: This is a frontend demonstration. Actual video downloading requires server-side implementation.</p>
+        <p>© 2023 YouTube Video Downloader</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        $(document).ready(function() {
-            $('#searchInput').on('keyup', function() {
-                var value = $(this).val().toLowerCase();
-                $('#dataTable tbody tr').each(function() {
-                    var rowText = $(this).text().toLowerCase();
-                    if (rowText.indexOf(value) > -1) {
-                        $(this).removeClass('hidden').addClass('visible');
-                    } else {
-                        $(this).removeClass('visible').addClass('hidden');
-                    }
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoUrlInput = document.getElementById('videoUrl');
+            const fetchBtn = document.getElementById('fetchBtn');
+            const videoInfo = document.getElementById('videoInfo');
+            const errorMsg = document.getElementById('errorMsg');
+            const successMsg = document.getElementById('successMsg');
+            const loading = document.getElementById('loading');
+            const thumbnail = document.getElementById('thumbnail');
+            const videoTitle = document.getElementById('videoTitle');
+            const videoDuration = document.getElementById('videoDuration');
+            const videoChannel = document.getElementById('videoChannel');
+            const videoViews = document.getElementById('videoViews');
+            const videoDescription = document.getElementById('videoDescription');
+            const downloadOptions = document.getElementById('downloadOptions');
+            
+            // API endpoint (simulated for this demo)
+            const API_BASE_URL = 'https://api.example.com/youtube-downloader';
+            
+            fetchBtn.addEventListener('click', function() {
+                const url = videoUrlInput.value.trim();
+                
+                // Simple URL validation
+                if (!url || !isValidYouTubeUrl(url)) {
+                    showError("Please enter a valid YouTube URL");
+                    return;
+                }
+                
+                // Fetch video information from API
+                fetchVideoInfo(url);
+            });
+            
+            function isValidYouTubeUrl(url) {
+                // Basic YouTube URL pattern
+                const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;
+                return pattern.test(url);
+            }
+            
+            function fetchVideoInfo(url) {
+                // Show loading state
+                showLoading();
+                hideError();
+                hideSuccess();
+                
+                // In a real application, you would make an API call here
+                // For this demo, we'll simulate the API call
+                simulateApiCall(url)
+                    .then(videoData => {
+                        hideLoading();
+                        displayVideoInfo(videoData);
+                    })
+                    .catch(error => {
+                        hideLoading();
+                        showError("Failed to fetch video information: " + error.message);
+                    });
+            }
+            
+            function simulateApiCall(url) {
+                return new Promise((resolve, reject) => {
+                    // Simulate API delay
+                    setTimeout(() => {
+                        // Extract video ID from URL for demo purposes
+                        const videoId = extractVideoId(url);
+                        
+                        if (!videoId) {
+                            reject(new Error("Invalid YouTube URL"));
+                            return;
+                        }
+                        
+                        // Sample video data for demonstration
+                        const videoData = {
+                            id: videoId,
+                            title: "Beautiful Nature Scenery - Relaxing Video",
+                            thumbnail: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+                            duration: "10:30",
+                            channel: "Nature Videos",
+                            views: "1,542,890",
+                            description: "Enjoy this beautiful nature scenery with relaxing music. Perfect for meditation, study or relaxation.",
+                            formats: [
+                                { quality: "1080p", format: "mp4", size: "125 MB" },
+                                { quality: "720p", format: "mp4", size: "85 MB" },
+                                { quality: "480p", format: "mp4", size: "45 MB" },
+                                { quality: "360p", format: "mp4", size: "25 MB" },
+                                { quality: "Audio", format: "mp3", size: "8 MB" }
+                            ]
+                        };
+                        
+                        resolve(videoData);
+                    }, 2000);
                 });
+            }
+            
+            function extractVideoId(url) {
+                // Simple extraction for demo purposes
+                // In a real app, you'd use a more robust method
+                const match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+                return match ? match[1] : null;
+            }
+            
+            function displayVideoInfo(videoData) {
+                thumbnail.src = videoData.thumbnail;
+                videoTitle.textContent = videoData.title;
+                videoDuration.textContent = `Duration: ${videoData.duration}`;
+                videoChannel.textContent = `Channel: ${videoData.channel}`;
+                videoViews.textContent = `Views: ${videoData.views}`;
+                videoDescription.textContent = videoData.description;
+                
+                // Generate download options
+                downloadOptions.innerHTML = '';
+                videoData.formats.forEach(format => {
+                    const downloadBtn = document.createElement('div');
+                    downloadBtn.className = 'download-btn';
+                    downloadBtn.innerHTML = `
+                        Download ${format.format.toUpperCase()}
+                        <div class="quality">${format.quality} - ${format.size}</div>
+                    `;
+                    downloadBtn.addEventListener('click', () => {
+                        downloadVideo(videoData.id, format.quality, format.format);
+                    });
+                    downloadOptions.appendChild(downloadBtn);
+                });
+                
+                videoInfo.style.display = 'block';
+            }
+            
+            function downloadVideo(videoId, quality, format) {
+                showLoading();
+                
+                // In a real application, you would make an API call to download the video
+                // For this demo, we'll simulate the download process
+                simulateDownload(videoId, quality, format)
+                    .then(downloadUrl => {
+                        hideLoading();
+                        showSuccess(`Downloading ${quality} ${format.toUpperCase()}...`);
+                        
+                        // In a real app, you would trigger the actual download
+                        // For demo, we'll just log the URL
+                        console.log("Download URL:", downloadUrl);
+                        
+                        // Simulate actual download by creating a temporary link
+                        setTimeout(() => {
+                            const tempLink = document.createElement('a');
+                            tempLink.href = '#';
+                            tempLink.download = `youtube_video_${videoId}.${format}`;
+                            document.body.appendChild(tempLink);
+                            tempLink.click();
+                            document.body.removeChild(tempLink);
+                        }, 1000);
+                    })
+                    .catch(error => {
+                        hideLoading();
+                        showError("Download failed: " + error.message);
+                    });
+            }
+            
+            function simulateDownload(videoId, quality, format) {
+                return new Promise((resolve) => {
+                    // Simulate processing time
+                    setTimeout(() => {
+                        // In a real app, this would be the actual download URL from your API
+                        const downloadUrl = `${API_BASE_URL}/download/${videoId}?quality=${quality}&format=${format}`;
+                        resolve(downloadUrl);
+                    }, 3000);
+                });
+            }
+            
+            function showError(message) {
+                errorMsg.textContent = message;
+                errorMsg.style.display = 'block';
+                videoInfo.style.display = 'none';
+            }
+            
+            function hideError() {
+                errorMsg.style.display = 'none';
+            }
+            
+            function showSuccess(message) {
+                successMsg.textContent = message;
+                successMsg.style.display = 'block';
+            }
+            
+            function hideSuccess() {
+                successMsg.style.display = 'none';
+            }
+            
+            function showLoading() {
+                loading.style.display = 'block';
+                fetchBtn.disabled = true;
+                videoInfo.style.display = 'none';
+            }
+            
+            function hideLoading() {
+                loading.style.display = 'none';
+                fetchBtn.disabled = false;
+            }
+            
+            // Example URLs for user convenience
+            videoUrlInput.addEventListener('focus', function() {
+                if (!this.value) {
+                    this.placeholder = "Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                }
+            });
+            
+            videoUrlInput.addEventListener('blur', function() {
+                this.placeholder = "Paste YouTube video URL here...";
             });
         });
     </script>
 </body>
-
 </html>
